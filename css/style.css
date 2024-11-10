@@ -1,6 +1,15 @@
 :root{
     --primary: #b6895b;
     --bg: #010101;
+    --counterBackgroundColor: #fff;
+    --primaryTextColor: #fff;
+    --secondaryTextColor: #aaa;
+    --primaryBackgroundColor:#0a0b0a;
+    --secondaryBackgroundColor: #1a191a;
+    --thirdBackgroundColor: #2a292b;
+    /* Sizing */
+    --sectionPadding: 8rem 0;
+
 }
 
 * {
@@ -79,6 +88,7 @@ body {
 .navbar .navbar-extra a {
     color: #fff;
     margin: 0 0.5rem;
+    font-size: 1rem;
 }
 .navbar .navbar-extra a:hover {
     color: var(--primary);
@@ -151,13 +161,15 @@ body {
 /* About section */
 .about, 
 .menu, 
-.contact {
+.contact,
+.reservation {
     padding: 8rem 7% 1.4rem;
 }
 
 .about h2, 
 .menu h2,
-.contact h2 {
+.contact h2,
+.reservation h2  {
     text-align: center;
     font-size: 2.6rem;
     margin-bottom: 3rem;
@@ -165,7 +177,8 @@ body {
 
 .about h2 span, 
 .menu h2 span,
-.contact span {
+.contact span,
+.reservation h2 span {
     color: var(--primary);
 }
 
@@ -201,6 +214,7 @@ body {
 .menu h2, .contact h2 {
     margin-bottom: 1rem;
 }
+
 .menu p, .contact p {
     text-align: center;
     max-width: 30rem;
@@ -214,25 +228,247 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin-top: 5rem;
-    justify-content: center;
+    justify-content: center; /* Membuat elemen-elemen sejajar di tengah */
 }
 
 .menu .row .menu-card {
-    flex: 1 1 3cm;
-    max-width: 25rem;
+    flex: 1 1 calc(15% - 1rem); /* 5 kolom di desktop (100% / 5 = 20%) */
+    max-width: calc(20% - 1rem); /* Lebar maksimal 20% */
     margin: 1rem;
     text-align: center;
     padding-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centering konten di dalam card */
 }
 
 .menu .row .menu-card img {
     border-radius: 50%;
-    width: 90%;
-
+    width: 100%; /* Gambar mengambil lebar penuh dari kartu */
+    height: auto; /* Menjaga proporsi gambar */
 }
 
 .menu .row .menu-card .menu-card-title {
     margin-top: 1.5rem auto 1rem;
+}
+
+/* Responsif untuk tablet (3 kolom) */
+@media (max-width: 758px) {
+    .menu .row .menu-card {
+        flex: 1 1 calc(40.33% - 1rem); /* 3 kolom di tablet */
+        max-width: calc(40.33% - 1rem);
+        align-items: center; /* Centering di tablet */
+    }
+}
+
+/* Responsif untuk handphone (2 kolom) */
+@media (max-width: 450px) {
+    .menu .row .menu-card {
+        flex: 1 1 calc(50% - 1rem); /* 2 kolom di handphone */
+        max-width: calc(50% - 1rem);
+        align-items: center; /* Centering di handphone */
+    }
+}
+
+/* Responsif untuk layar kecil (1 kolom) */
+@media (max-width: 480px) {
+    .menu .row .menu-card {
+        flex: 1 1 100%; /* 1 kolom di layar sangat kecil */
+        max-width: 100%;
+        align-items: center; /* Centering di layar kecil */
+    }
+}
+
+
+
+
+
+
+
+/* Menu */
+.menu2 {
+    padding: 7rem 0 3rem;
+    text-align: center;
+}
+
+.section-title {
+    max-width: 450px;
+    margin: 0 auto 3rem;
+}
+
+.section-title h5 {
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.section-title h1 {
+    font-size: 2.2rem;
+}
+
+.sub-section-title h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.75rem;
+}
+
+.sub-section-title p {
+    color: var(--secondaryTextColor);
+}
+
+.standing-line {
+    width:  2px;
+    height: 50px;
+    background-color: var(--counterBackgroundColor);
+    margin: 0.5rem auto 2rem;
+}
+
+.menu-details {
+    max-width: 1100px; /* Atur lebar maksimal */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    column-gap: 6rem;
+    margin: 0 auto
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Menyelaraskan secara vertikal */
+    margin-bottom: 1rem;
+    text-align: left;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+
+.menu-item h4 {
+    font-weight: 400rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.menu-item p {
+    font-size: 0.7rem;
+    text-align: left;
+}
+
+.menu-item div:last-child {
+    color: var(--secondaryTextColor);
+    font-weight: 200;
+}
+
+.menu-item > div:first-child {
+    flex-grow: 1; /* Agar deskripsi menu mengambil ruang yang tersedia */
+}
+
+.menu-item div:last-child {
+    width: 100px; /* Sesuaikan lebar harga jika diperlukan */
+    text-align: right;
+}
+
+
+.menu-carousel {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* reservation section */
+.section-title {
+    text-align: center; /* Memusatkan teks */
+    margin: 0 auto 3rem; /* Menjadikan elemen di tengah jika ada lebar tertentu */
+    max-width: 450rem; /* Memberikan lebar maksimum jika dibutuhkan */
+}
+
+
+
+.reservation-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.opening-tiems,
+.social-media,
+.reservation-info {
+    margin-bottom: 2rem;
+}
+
+.reservation-item-info h3 {
+    margin-bottom: 1.2rem;
+}
+
+.reservation-item-info p {
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-social {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.reservation-item-form div {
+    margin-bottom: 1.5rem;
+}
+
+.reservation-item-form label {
+    display: block;
+    font-weight: 300;
+    margin-bottom: 0.7rem;
+}
+
+.reservation-item-form input,
+.reservation-item-form textarea {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #444444;
+    padding: 0.5rem 1.3rem;
+    font-family: "Popins" sans-serif;
+    color: var(--counterBackgroundColor);
+}
+
+.reservation-item-form textarea {
+    resize: none;
+}
+
+.reservation-item-form button {
+    cursor: pointer;
+    padding: 0.75rem 1.5rem;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+/* location */
+.map {
+    margin-bottom: -5px;
+}
+
+.map iframe {
+    height: 450px;
 }
 
 
@@ -244,11 +480,11 @@ body {
 
 }
 
-.contact .row .map {
+/* .contact .row .map {
     flex: 1 1 45rem;
     width: 100%;
     object-fit: cover;
-}
+} */
 
 .contact .row form {
     flex: 1 1 45rem;
@@ -422,5 +658,11 @@ footer .credit a {
         font-size: 55%;
     }
 }
+
+
+
+
+
+
 
 

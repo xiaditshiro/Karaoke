@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Karaoke</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 <!-- font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,17 +20,18 @@
 <body>
     <!-- navbar start -->
     <nav class="navbar">
-        <a href="#" class="navbar-logo">Tophits<span>Karaoke</span></a>
+        <a href="#" class="navbar-logo" data-aos="zoom-in-down" data-aos-delay="0.1" data-aos-duration="500">Tophits<span>Karaoke</span></a>
         
         <div class="navbar-nav">
-            <a href="#home">Home</a>
-            <a href="#about">Tentang Kami</a>
-            <a href="#menu">Menu</a>
-            <a href="#contact">Kontak</a>
+            <a href="#home" data-aos="fade-down" data-aos-delay="0.1" data-aos-duration="600" >Home</a>
+            <a href="#about" data-aos="fade-down" data-aos-delay="0.1" data-aos-duration="1200">Tentang Kami</a>
+            <a href="#menu-promo" data-aos="fade-down" data-aos-delay="0.1" data-aos-duration="1800">Promo</a>
+            <a href="#menu" data-aos="fade-down" data-aos-delay="0.1" data-aos-duration="2400">Menu</a>
+            
         </div>
         <div class="navbar-extra">
-            <a href="#" id="search"><i data-feather="search"></i></a>
-            <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+            <a href="#reservation" data-aos="fade-down" data-aos-delay="0.1" data-aos-duration="3000">Reservasion</a>
+            <a href="#contact"><i data-feather="phone" data-aos="fade-down" data-aos-delay="0.1" data-aos-duration="3600"></i></a>
             <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
         </div>
     </nav>
@@ -38,29 +40,190 @@
     <!-- hero section start -->
      <section class="hero" id="home">
         <main class="content">
-            <h1>Mari Kita <span>Karaoke</span></h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, laborum!</p>
-            <a href="#" class="cta">Beli Sekarang</a>
+            <h1 data-aos="zoom-in-right" data-aos-delay="50" data-aos-duration="1000">Mari Kita <span>Karaoke</span></h1>
+            <p data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+            data-aos-delay="0.1" data-aos-duration="4000">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, laborum!</p>
+            <a href="#menu" class="cta" data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="500">SEE MENU</a>
+            <a href="#reservation" class="cta" data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="500">BOOK A TABLE</a>
         </main>
      </section>
     <!-- hero section end -->
 
     <!-- About section start -->
     <section id="about" class="about">
-        <h2><span>Tentang</span> Kami</h2>
+        <h2 data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"><span>Tentang</span> Kami</h2>
 
         <div class="row">
             <div class="about-img">
-                <img src="img/tentang-kami.jpg" alt="Tentang Kami">
+                <img data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom" data-aos-duration="500" src="img/tentang-kami.jpg" alt="Tentang Kami">
             </div>
             <div class="content">
-                <h3>Kenapa Memilih Bar Kami?</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora iusto nesciunt ea magnam rem expedita.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nisi sed laborum quaerat enim quasi soluta placeat est. Cupiditate, voluptas.</p>
+                <h3 data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom">Kenapa Memilih Bar Kami?</h3>
+                <p data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom" data-aos-duration="500">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora iusto nesciunt ea magnam rem expedita.</p>
+                <p data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom" data-aos-duration="500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nisi sed laborum quaerat enim quasi soluta placeat est. Cupiditate, voluptas.</p>
             </div>
         </div>
      </section>
     <!-- About section end -->
+
+
+
+
+
+<!-- menu promo start -->
+<section id="menu-promo">
+    <div class="menu main-container">
+        <!-- maincorse menu start -->
+        <div class="sub-menu-maincors">
+            <div class="sub-section-title">
+                <h2>Menu Promo</h2>
+                <p>
+                    Savor the moment, indulge in the main event!
+                </p>
+                <div class="standing-line"></div>
+            </div>
+
+            <div class="menu-details">
+                <div class="menu-detail">
+                    <div class="menu-item">
+                        <div>
+                            <h4>Lemon Garlic Shrimp</h4>
+                            <p>Jumbo shrimp, Lemon, Butter Sauce</p>
+                        </div>
+                        <div>Rp. 35k</div>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <h4>Spaghetti Carbonara Supreme</h4>
+                            <p>Pancetta, parmesan cheese, egg</p>
+                        </div>
+                        <div>Rp. 40k</div>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <h4>Grilled Chicken Pesto</h4>
+                            <p>Chicken breast, pesto, panini bread</p>
+                        </div>
+                        <div>Rp. 40k</div>
+                    </div>
+                </div>
+                <div class="menu-detail">
+                    <div class="menu-item">
+                        <div>
+                            <h4>Lemon Garlic Shrimp</h4>
+                            <p>Jumbo shrimp, Lemon, Butter Sauce</p>
+                        </div>
+                        <div>Rp. 35k</div>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <h4>Spaghetti Carbonara Supreme</h4>
+                            <p>Pancetta, parmesan cheese, egg</p>
+                        </div>
+                        <div>Rp. 40k</div>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <h4>Grilled Chicken Pesto</h4>
+                            <p>Chicken breast, pesto, panini bread</p>
+                        </div>
+                        <div>Rp. 40k</div>
+                    </div>
+                </div>
+                <div class="menu-detail">
+                    <div class="menu-item">
+                        <div>
+                            <h4>Lemon Garlic Shrimp</h4>
+                            <p>Jumbo shrimp, Lemon, Butter Sauce</p>
+                        </div>
+                        <div>Rp. 35k</div>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <h4>Spaghetti Carbonara Supreme</h4>
+                            <p>Pancetta, parmesan cheese, egg</p>
+                        </div>
+                        <div>Rp. 40k</div>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <h4>Grilled Chicken Pesto</h4>
+                            <p>Chicken breast, pesto, panini bread</p>
+                        </div>
+                        <div>Rp. 40k</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- maincorse menu end -->
+         <div class="row">
+            <div class="menu-card">
+                <img src="img/Main Course/1.png" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/Main Course/2.png" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/Main Course/3.png" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/Main Course/4.png" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/Main Course/5.png" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/Main Course/6.png" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/Main Course/7.png" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/Main Course/8.png" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+        </div>
+</section>
+
+<!-- menu promo end -->
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- menu start -->
     <section id="menu" class="menu">
@@ -94,10 +257,313 @@
                 <h3 class="menu-card-title">-Hibiki -</h3>
                 <p class="menu-card-price">IDR 987K</p>
             </div>
+            <div class="menu-card">
+                <img src="img/menu/menu2.jpg" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/menu/menu2.jpg" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/menu/menu2.jpg" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/menu/menu2.jpg" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/menu/menu2.jpg" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/menu/menu2.jpg" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/menu/menu2.jpg" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/menu/menu2.jpg" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/menu/menu2.jpg" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/menu/menu2.jpg" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/menu/menu2.jpg" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/menu/menu2.jpg" alt="Hibiki" class="menu-card-img">
+                <h3 class="menu-card-title">-Hibiki -</h3>
+                <p class="menu-card-price">IDR 987K</p>
+            </div>
         </div>
      </section>
 
     <!-- menu end -->
+
+    <!-- menu -->
+    <section id="menu2">
+        <div class="menu main-container">
+            <div class="section-title">
+                <h5>Explore</h5>
+                <h1>Our Menu</h1>
+                <p>
+                    Our Menu, where every dish is a masterpiece and every bite, a standing ovation to flavor!
+                </p>
+            </div>
+            <!-- maincorse menu start -->
+            <div class="sub-menu-maincors">
+                <div class="sub-section-title">
+                    <h2>Main Course</h2>
+                    <p>
+                        Savor the moment, indulge in the main event!
+                    </p>
+                    <div class="standing-line"></div>
+                </div>
+
+                <div class="menu-details">
+                    <div class="menu-detail">
+                        <div class="menu-item">
+                            <div>
+                                <h4>Lemon Garlic Shrimp</h4>
+                                <p>Jumbo shrimp, Lemon, Butter Sauce</p>
+                            </div>
+                            <div>Rp. 35k</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <h4>Spaghetti Carbonara Supreme</h4>
+                                <p>Pancetta, parmesan cheese, egg</p>
+                            </div>
+                            <div>Rp. 40k</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <h4>Grilled Chicken Pesto</h4>
+                                <p>Chicken breast, pesto, panini bread</p>
+                            </div>
+                            <div>Rp. 40k</div>
+                        </div>
+                    </div>
+                    <div class="menu-detail">
+                        <div class="menu-item">
+                            <div>
+                                <h4>Lemon Garlic Shrimp</h4>
+                                <p>Jumbo shrimp, Lemon, Butter Sauce</p>
+                            </div>
+                            <div>Rp. 35k</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <h4>Spaghetti Carbonara Supreme</h4>
+                                <p>Pancetta, parmesan cheese, egg</p>
+                            </div>
+                            <div>Rp. 40k</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <h4>Grilled Chicken Pesto</h4>
+                                <p>Chicken breast, pesto, panini bread</p>
+                            </div>
+                            <div>Rp. 40k</div>
+                        </div>
+                    </div>
+                    <div class="menu-detail">
+                        <div class="menu-item">
+                            <div>
+                                <h4>Lemon Garlic Shrimp</h4>
+                                <p>Jumbo shrimp, Lemon, Butter Sauce</p>
+                            </div>
+                            <div>Rp. 35k</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <h4>Spaghetti Carbonara Supreme</h4>
+                                <p>Pancetta, parmesan cheese, egg</p>
+                            </div>
+                            <div>Rp. 40k</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <h4>Grilled Chicken Pesto</h4>
+                                <p>Chicken breast, pesto, panini bread</p>
+                            </div>
+                            <div>Rp. 40k</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!-- maincorse menu end -->
+             <div class="row">
+                <div class="menu-card">
+                    <img src="img/Main Course/1.png" alt="Hibiki" class="menu-card-img">
+                    <h3 class="menu-card-title">-Hibiki -</h3>
+                    <p class="menu-card-price">IDR 987K</p>
+                </div>
+                <div class="menu-card">
+                    <img src="img/Main Course/2.png" alt="Hibiki" class="menu-card-img">
+                    <h3 class="menu-card-title">-Hibiki -</h3>
+                    <p class="menu-card-price">IDR 987K</p>
+                </div>
+                <div class="menu-card">
+                    <img src="img/Main Course/3.png" alt="Hibiki" class="menu-card-img">
+                    <h3 class="menu-card-title">-Hibiki -</h3>
+                    <p class="menu-card-price">IDR 987K</p>
+                </div>
+                <div class="menu-card">
+                    <img src="img/Main Course/4.png" alt="Hibiki" class="menu-card-img">
+                    <h3 class="menu-card-title">-Hibiki -</h3>
+                    <p class="menu-card-price">IDR 987K</p>
+                </div>
+                <div class="menu-card">
+                    <img src="img/Main Course/5.png" alt="Hibiki" class="menu-card-img">
+                    <h3 class="menu-card-title">-Hibiki -</h3>
+                    <p class="menu-card-price">IDR 987K</p>
+                </div>
+                <div class="menu-card">
+                    <img src="img/Main Course/6.png" alt="Hibiki" class="menu-card-img">
+                    <h3 class="menu-card-title">-Hibiki -</h3>
+                    <p class="menu-card-price">IDR 987K</p>
+                </div>
+                <div class="menu-card">
+                    <img src="img/Main Course/7.png" alt="Hibiki" class="menu-card-img">
+                    <h3 class="menu-card-title">-Hibiki -</h3>
+                    <p class="menu-card-price">IDR 987K</p>
+                </div>
+                <div class="menu-card">
+                    <img src="img/Main Course/8.png" alt="Hibiki" class="menu-card-img">
+                    <h3 class="menu-card-title">-Hibiki -</h3>
+                    <p class="menu-card-price">IDR 987K</p>
+                </div>
+            </div>
+    </section>
+
+
+
+
+   
+
+    <!-- reservation -->
+    <section id="reservation" class="reservation">
+        <div class="reservation main-container">
+            <div class="section-title">
+                <h5>Book tables</h5>
+                <h2><span>Reser</span>vation</h2>
+                <p>contact us to find the best table for you</p>
+            </div>
+
+            <div class="reservation-items">
+                <div class="reservation-item-info">
+                    <div class="reservation-info">
+                        <p>We will confirm your reservation within 24 hours.</p>
+                    </div>
+
+                    <div class="opening-items">
+                        <h3>Opening Times</h3>
+
+                        <div class="opening-items-schedule">
+                            <div>
+                                <p>Monday -Friday</p>
+                                <p>10am - 10pm</p>
+                            </div>
+                            
+                            <div>
+                                <p>Saturday - Sunday</p>
+                                <p>10am - 12pm</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-media">
+                        <h3>Our Social Media</h3>
+                        <div class="contact-info-sosial">
+                            <a href="https://instagram.com">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path
+                                    fill="#fff"
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+                <form class="reservation-item-form" id="reservation-item-form">
+                    <div>
+                        <label for="table_name">Name</label>
+                        <input 
+                        type="text" 
+                        name="table_name" 
+                        id="table_name" 
+                        placeholder="Your name">
+                    </div>
+                    <div>
+                        <label for="table_capacity">Number of people</label>
+                        <input 
+                        type="number" 
+                        name="table_capacity" 
+                        id="table_capacity" 
+                        placeholder="Number of people">
+                    </div>
+                    <div>
+                        <label for="order_date">Date and Timee (WITA)</label>
+                        <input 
+                        type="datetime-local" 
+                        name="order_date" 
+                        id="order_date" 
+                        placeholder="Time of Arrival">
+                    </div>
+                    <div>
+                        <label for="order">Order Here</label>
+                        <textarea
+                        name="order" 
+                        id="order" 
+                        placeholder="Leave blank if you want to order on the location"
+                        cols="30" rows="10">
+                        </textarea> 
+                    </div>
+                    <div>
+                        <button>Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+     </section>
+
+
+     <!-- location -->
+      <section id="location">
+        <div class="location">
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.125738466572!2d115.34974620000001!3d-8.583907499999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd215cbd7a23651%3A0x917988f03573178b!2sTopHits%20Karaoke%20Gianyar!5e0!3m2!1sid!2sid!4v1731168903358!5m2!1sid!2sid" 
+                width="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            </div>
+        </div>
+      </section>
 
     <!-- contack section start -->
     <section id="contact" class="contact">
@@ -105,41 +571,22 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem iste amet dicta, ullam deserunt sapiente reprehenderit. Est, modi aperiam.
         </p>
 
-        <div class="row">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31561.00948161587!2d115.32914652855285!3d-8.583864518216284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd215cbd7a23651%3A0x917988f03573178b!2sTopHits%20Karaoke%20Gianyar!5e0!3m2!1sid!2sid!4v1731080606662!5m2!1sid!2sid" 
-            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
-            
-            <form action="">
-                <div class="input-group">
-                    <i data-feather="user"></i>
-                    <input type="text" placeholder="nama">
-                </div>
-                <div class="input-group">
-                    <i data-feather="mail"></i>
-                    <input type="text" placeholder="email">
-                </div>
-                <div class="input-group">
-                    <i data-feather="phone"></i>
-                    <input type="text" placeholder="nohp">
-                </div>
-                <button type="submit" class="btn">Kirim Pesan</button>
-            </form>
-        </div>
+        
     </section>
     <!-- contack section end -->
 
     <!-- footer start -->
      <footer>
         <div class="socials">
-            <a href="#"><i data-feather="instagram"></i></a>
-            <a href="#"><i data-feather="phone"></i></a>
+            <a href="https://www.instagram.com/xiadit_shiro/"><i data-feather="instagram"></i></a>
+            <a href="https://wa.me/6287861716325"><i data-feather="phone"></i></a>
         </div>
 
         <div class="links">
             <a href="#home">Home</a>
             <a href="#about">Tentang kami</a>
             <a href="#menu">Menu</a>
-            <a href="#contact">Kontak</a>
+            <a href="#reservation">Reservasion</a>
         </div>
 
         <div class="credit">
@@ -154,8 +601,11 @@
     </script>
 
     <!-- my javascript -->
-     <script src="js/script.js">
-
+     <script src="js/script.js"></script>
+     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+     <script>
+       AOS.init();
      </script>
 </body>
 </html>
+
