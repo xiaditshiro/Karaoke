@@ -59,3 +59,38 @@
             <button type="submit" class="btn">Kirim Pesan</button>
         </form> -->
     </div>
+
+
+
+
+
+
+
+
+
+    /* Responsif untuk tablet (3 kolom) */
+@media (max-width: 758px) {
+    .menu .row .menu-card {
+        flex: 1 1 calc(40.33% - 1rem); /* 3 kolom di tablet */
+        max-width: calc(40.33% - 1rem);
+        align-items: center; /* Centering di tablet */
+    }
+}
+
+/* Responsif untuk handphone (2 kolom) */
+@media (max-width: 450px) {
+    .menu .row .menu-card {
+        flex: 1 1 calc(50% - 1rem); /* 2 kolom di handphone */
+        max-width: calc(50% - 1rem);
+        align-items: center; /* Centering di handphone */
+    }
+}
+
+/* Responsif untuk layar kecil (1 kolom) */
+@media (max-width: 480px) {
+    .menu .row .menu-card {
+        flex: 1 1 100%; /* 1 kolom di layar sangat kecil */
+        max-width: 100%;
+        align-items: center; /* Centering di layar kecil */
+    }
+}

@@ -244,40 +244,16 @@ body {
 
 .menu .row .menu-card img {
     border-radius: 50%;
-    width: 100%; /* Gambar mengambil lebar penuh dari kartu */
-    height: auto; /* Menjaga proporsi gambar */
+    max-width: 100%; /* Gunakan max-width daripada width */
+    height: auto; /* Pastikan gambar mempertahankan proporsinya */
 }
+
 
 .menu .row .menu-card .menu-card-title {
     margin-top: 1.5rem auto 1rem;
 }
 
-/* Responsif untuk tablet (3 kolom) */
-@media (max-width: 758px) {
-    .menu .row .menu-card {
-        flex: 1 1 calc(40.33% - 1rem); /* 3 kolom di tablet */
-        max-width: calc(40.33% - 1rem);
-        align-items: center; /* Centering di tablet */
-    }
-}
 
-/* Responsif untuk handphone (2 kolom) */
-@media (max-width: 450px) {
-    .menu .row .menu-card {
-        flex: 1 1 calc(50% - 1rem); /* 2 kolom di handphone */
-        max-width: calc(50% - 1rem);
-        align-items: center; /* Centering di handphone */
-    }
-}
-
-/* Responsif untuk layar kecil (1 kolom) */
-@media (max-width: 480px) {
-    .menu .row .menu-card {
-        flex: 1 1 100%; /* 1 kolom di layar sangat kecil */
-        max-width: 100%;
-        align-items: center; /* Centering di layar kecil */
-    }
-}
 
 
 
@@ -658,6 +634,23 @@ footer .credit a {
         font-size: 55%;
     }
 }
+
+@media (max-width: 450px) {
+    .menu .row .menu-card {
+        flex: 1 1 calc(33.33% - 1rem); /* Ubah menjadi 3 kolom */
+        max-width: calc(33.33% - 1rem);
+        align-items: center;
+    }
+}
+
+@media (max-width: 320px) {
+    .menu .row .menu-card {
+        flex: 1 1 calc(50% - 1rem); /* Ubah menjadi 2 kolom */
+        max-width: calc(50% - 1rem);
+        align-items: center;
+    }
+}
+
 
 
 
