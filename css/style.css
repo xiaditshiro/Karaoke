@@ -643,6 +643,13 @@ footer .credit a {
     }
 }
 
+@media (max-width: 320px) {
+    .menu .row .menu-card {
+        flex: 1 1 calc(50% - 1rem); /* Ubah menjadi 2 kolom */
+        max-width: calc(50% - 1rem);
+        align-items: center;
+    }
+}
 
 
 
