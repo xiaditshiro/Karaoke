@@ -71,3 +71,40 @@ sendDiscordButton.addEventListener("click", function (event) {
     });
 });
 
+
+
+// Ambil elemen-elemen dropdown dan textarea
+const makananDropdown = document.querySelector("#menu-makanan");
+const minumanDropdown = document.querySelector("#menu-minuman");
+const promoDropdown = document.querySelector("#promo");
+const orderTextarea = document.querySelector("#order");
+
+// Fungsi untuk menambahkan pilihan ke order dan mereset dropdown
+function addAndResetDropdown(category, dropdown) {
+    const selectedMenu = dropdown.value;
+    if (selectedMenu) {
+        orderTextarea.value += `${category}: ${selectedMenu}\n`;
+        dropdown.selectedIndex = 0; // Reset pilihan dropdown
+    }
+}
+
+// Event listener untuk setiap dropdown
+makananDropdown.addEventListener('change', function() {
+    addAndResetDropdown('Makanan', makananDropdown);
+});
+
+minumanDropdown.addEventListener('change', function() {
+    addAndResetDropdown('Minuman', minumanDropdown);
+});
+
+promoDropdown.addEventListener('change', function() {
+    addAndResetDropdown('Paket Promo', promoDropdown);
+});
+
+
+
+
+
+
+
+
