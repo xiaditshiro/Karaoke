@@ -27,13 +27,40 @@ function createOrderText() {
     const date = document.querySelector("#order_date")?.value || "Tanggal tidak diisi";
     const order = document.querySelector("#order")?.value || "*Pesan ditempat";
 
-    return `Halo, saya ingin reservasi meja untuk ${tableSize} orang, atas nama ${tableName} pada tanggal/waktu ${date}\n\nOrder:\n${order}`;
+    return `Halo, saya ingin reservasi,
+Meja untuk ${tableSize} orang,
+Atas nama ${tableName} 
+Pada tanggal/waktu ${date}
+
+Order:
+${order}`;
+}
+
+// Fungsi untuk validasi input
+function validateForm() {
+    const tableName = document.querySelector("#table_name").value.trim();
+    const date = document.querySelector("#order_date").value.trim();
+
+    if (!tableName) {
+        alert("Nama harus diisi.");
+        return false;
+    }
+    if (!date) {
+        alert("Tanggal dan waktu harus diisi.");
+        return false;
+    }
+    return true;
 }
 
 // Event listener untuk tombol WhatsApp
 sendWhatsappButton.addEventListener("click", function (event) {
     // Mencegah form untuk submit secara default
     event.preventDefault();
+
+    // Validasi input
+    if (!validateForm()) {
+        return; // Jika validasi gagal, hentikan proses
+    }
 
     // Membuat pesan untuk WhatsApp
     const orderText = createOrderText();
@@ -47,6 +74,11 @@ sendWhatsappButton.addEventListener("click", function (event) {
 // Event listener untuk tombol Discord
 sendDiscordButton.addEventListener("click", function (event) {
     event.preventDefault(); // Mencegah form submit
+
+    // Validasi input
+    if (!validateForm()) {
+        return; // Jika validasi gagal, hentikan proses
+    }
 
     const orderText = createOrderText();
     const discordWebhookURL = "https://discord.com/api/webhooks/1305728622723862569/_-MkpHSkNPHwfGHSmvLrnk_Zzpd1nMcU1qc2sJRmazTJdAUMFBeBR0iN5JOhFuBkwo6s"; // Ganti dengan URL webhook Discord Anda
@@ -70,6 +102,15 @@ sendDiscordButton.addEventListener("click", function (event) {
         alert("Terjadi kesalahan saat mengirim pesan ke Discord");
     });
 });
+
+
+
+
+
+
+
+
+
 
 
 

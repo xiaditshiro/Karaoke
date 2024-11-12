@@ -539,6 +539,66 @@ footer .credit a {
 
 
 
+/* Styling untuk container dropdown */
+.drop-menu-item {
+    margin-bottom: 1.5rem;
+}
+
+/* Styling untuk label dropdown */
+.drop-menu-item label {
+    display: block;
+    font-weight: 300;
+    margin-bottom: 0.7rem;
+}
+
+/* Styling untuk elemen select (dropdown) */
+.drop-menu-item select {
+    background-color: black; /* Latar belakang hitam */
+    color: var(--counterBackgroundColor); /* Warna teks, bisa disesuaikan */
+    border: 1px solid #444444; /* Border sesuai tema */
+    padding: 0.5rem 1.3rem;
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    cursor: pointer;
+    appearance: none; /* Hapus style default pada beberapa browser */
+}
+
+/* Opsional: Mengubah warna opsi saat dropdown terbuka */
+.drop-menu-item select option {
+    background-color: black; /* Latar belakang opsi */
+    color: var(--counterBackgroundColor); /* Warna teks */
+}
+
+/* Opsional: Tambahkan gaya untuk memperbaiki panah default pada beberapa browser */
+.drop-menu-item select::-ms-expand {
+    display: none; /* Hilangkan panah dropdown default pada IE/Edge */
+}
+
+
+
+/* Styling untuk tombol */
+#sendWhatsapp,
+#sendDiscord {
+    cursor: pointer;
+    padding: 0.75rem 1.5rem;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    border: 1px solid #444444; /* Sama seperti input */
+    background: transparent;
+    color: var(--counterBackgroundColor); /* Mengikuti warna tema */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#sendWhatsapp:hover,
+#sendDiscord:hover {
+    background-color: #444444; /* Warna latar belakang saat hover */
+    color: white; /* Warna teks saat hover */
+}
+
+
+
 
 
 
