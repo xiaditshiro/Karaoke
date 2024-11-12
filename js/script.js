@@ -15,30 +15,59 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// Reservasi
+// Mengambil elemen tombol dan form
+const sendWhatsappButton = document.querySelector("#sendWhatsapp");
+const sendDiscordButton = document.querySelector("#sendDiscord");
 const form = document.querySelector("#reservation-item-form");
 
-form.addEventListener("submit", function (event) {
+// Fungsi untuk membuat teks pesanan
+function createOrderText() {
+    const tableName = document.querySelector("#table_name")?.value || "Nama tidak diisi";
+    const tableSize = document.querySelector("#table_capacity")?.value || "0";
+    const date = document.querySelector("#order_date")?.value || "Tanggal tidak diisi";
+    const order = document.querySelector("#order")?.value || "*Pesan ditempat";
+
+    return `Halo, saya ingin reservasi meja untuk ${tableSize} orang, atas nama ${tableName} pada tanggal/waktu ${date}\n\nOrder:\n${order}`;
+}
+
+// Event listener untuk tombol WhatsApp
+sendWhatsappButton.addEventListener("click", function (event) {
+    // Mencegah form untuk submit secara default
     event.preventDefault();
 
-    // Mengambil data dari form
-    const tableName = document.querySelector("#table_name").value;
-    const tableSize = document.querySelector("#table_capacity").value;
-    const date = document.querySelector("#order_date").value;
-    const order = document.querySelector("#order").value;
-
-    // Membuat pesan untuk WhatsApp dengan encodeURIComponent
-    const orderText = `Halo, saya ingin reservasi meja untuk ${tableSize} orang, atas nama ${tableName} pada tanggal/waktu ${date}
-
-Order:
-${order || "*Pesan ditempat"}`;
-
-    // Mengencode pesan untuk URL
+    // Membuat pesan untuk WhatsApp
+    const orderText = createOrderText();
     const encodedText = encodeURIComponent(orderText);
-
-    // Membuat URL WhatsApp dengan nomor dan pesan yang di-encode
     const whatsappURL = `https://wa.me/6287861716325?text=${encodedText}`;
 
     // Redirect ke WhatsApp
     window.location.href = whatsappURL;
 });
+
+// Event listener untuk tombol Discord
+sendDiscordButton.addEventListener("click", function (event) {
+    event.preventDefault(); // Mencegah form submit
+
+    const orderText = createOrderText();
+    const discordWebhookURL = "https://discord.com/api/webhooks/1305728622723862569/_-MkpHSkNPHwfGHSmvLrnk_Zzpd1nMcU1qc2sJRmazTJdAUMFBeBR0iN5JOhFuBkwo6s"; // Ganti dengan URL webhook Discord Anda
+
+    fetch(discordWebhookURL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            content: orderText // Pesan yang akan dikirim
+        })
+    }).then(response => {
+        if (response.ok) {
+            alert("Pesan berhasil dikirim ke Discord");
+        } else {
+            alert("Gagal mengirim pesan ke Discord");
+        }
+    }).catch(error => {
+        console.error("Terjadi kesalahan saat mengirim pesan ke Discord:", error);
+        alert("Terjadi kesalahan saat mengirim pesan ke Discord");
+    });
+});
+
