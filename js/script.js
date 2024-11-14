@@ -1,3 +1,5 @@
+
+
 // Toggle class active untuk navbar
 const navbarNav = document.querySelector('.navbar-nav');
 
@@ -22,15 +24,19 @@ const form = document.querySelector("#reservation-item-form");
 
 // Fungsi untuk membuat teks pesanan
 function createOrderText() {
-    const tableName = document.querySelector("#table_name")?.value || "Nama tidak diisi";
-    const tableSize = document.querySelector("#table_capacity")?.value || "0";
-    const date = document.querySelector("#order_date")?.value || "Tanggal tidak diisi";
-    const order = document.querySelector("#order")?.value || "*Pesan ditempat";
+    const tableName = document.querySelector("#table_name")?.value || "--Nama tidak diisi--";
+    const tableSize = document.querySelector("#table_capacity")?.value || "--Tidak diisi--";
+    const date = document.querySelector("#order_date")?.value || "--Tanggal tidak diisi--";
+    const order = document.querySelector("#order")?.value || "--Pesan ditempat--";
+    const tableMeja = document.querySelector("#table_meja")?.value || "--Nomor meja tidak diisi--";
+    const tableHp = document.querySelector("#table_hp")?.value || "--Nomor HP tidak diisi--";
 
     return `Halo, saya ingin reservasi,
-Meja untuk ${tableSize} orang,
-Atas nama ${tableName} 
-Pada tanggal/waktu ${date}
+Atas nama                     : ${tableName} 
+Meja untuk                    : ${tableSize} orang
+Meja nomor                   : ${tableMeja}
+No Hp                              : ${tableHp}
+Pada tanggal/waktu  : ${date}
 
 Order:
 ${order}`;
@@ -45,10 +51,10 @@ function validateForm() {
         alert("Nama harus diisi.");
         return false;
     }
-    if (!date) {
-        alert("Tanggal dan waktu harus diisi.");
-        return false;
-    }
+    // if (!date) {
+    //     alert("Tanggal dan waktu harus diisi.");
+    //     return false;
+    // }
     return true;
 }
 
@@ -141,6 +147,16 @@ minumanDropdown.addEventListener('change', function() {
 promoDropdown.addEventListener('change', function() {
     addAndResetDropdown('Paket Promo', promoDropdown);
 });
+
+
+
+
+
+
+
+
+
+
 
 
 

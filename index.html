@@ -504,6 +504,7 @@
                 <form class="reservation-item-form" id="reservation-item-form">
                     <div>
                         <label for="table_name">Name</label>
+                        <h6>(Nama harus sama dengan yang reservasi/yang memesan)</h6>
                         <input 
                         type="text" 
                         name="table_name" 
@@ -511,15 +512,35 @@
                         placeholder="Your name">
                     </div>
                     <div>
+                        <label for="table_meja">No Meja/Rom</label>
+                        <h6>(*not diisi hanya untuk memesan menu)</h6>
+                        <input 
+                        type="number" 
+                        name="table_meja" 
+                        id="table_meja" 
+                        placeholder="Your table/rome">
+                    </div>
+                    <div>
                         <label for="table_capacity">Number of people</label>
+                        <h6>(*not diisi hanya untu reservasi)</h6>
                         <input 
                         type="number" 
                         name="table_capacity" 
                         id="table_capacity" 
-                        placeholder="Number of people">
+                        placeholder="Jumlah orang">
+                    </div>
+                    <div>
+                        <label for="table_hp">Number HP</label>
+                        <h6>(*not diisi hanya untu reservasi)</h6>
+                        <input 
+                        type="tel" 
+                        name="table_hp" 
+                        id="table_hp" 
+                        placeholder="Number HP">
                     </div>
                     <div>
                         <label for="order_date">Date and Timee (WITA)</label>
+                        <h6>(*not diisi hanya untu reservasi)</h6>
                         <input 
                         type="datetime-local" 
                         name="order_date" 
@@ -534,7 +555,7 @@
                             placeholder="Leave blank if you want to order on the location"
                             cols="30" rows="10"></textarea> 
                     </div>
-
+                 
                     
                     <div class="drop-menu-container">
                         <!-- Dropdown untuk Menu Makanan -->
@@ -574,8 +595,8 @@
                     
                     
                     <div>
-                        <button id="sendWhatsapp">Send to WhatsApp</button>
-                        <button id="sendDiscord">Dc</button>
+                        <button id="sendWhatsapp">Reservasi</button>
+                        <button id="sendDiscord">Pesan Menu</button>
                     </div>
                 </form>
             </div>
