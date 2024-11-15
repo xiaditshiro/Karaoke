@@ -1,5 +1,3 @@
-
-
 // Toggle class active untuk navbar
 const navbarNav = document.querySelector('.navbar-nav');
 
@@ -17,9 +15,12 @@ document.addEventListener('click', function(e) {
     }
 });
 
+
+
+
+
 // Mengambil elemen tombol dan form
 const sendWhatsappButton = document.querySelector("#sendWhatsapp");
-const sendDiscordButton = document.querySelector("#sendDiscord");
 const form = document.querySelector("#reservation-item-form");
 
 // Fungsi untuk membuat teks pesanan
@@ -28,14 +29,12 @@ function createOrderText() {
     const tableSize = document.querySelector("#table_capacity")?.value || "--Tidak diisi--";
     const date = document.querySelector("#order_date")?.value || "--Tanggal tidak diisi--";
     const order = document.querySelector("#order")?.value || "--Pesan ditempat--";
-    const tableMeja = document.querySelector("#table_meja")?.value || "--Nomor meja tidak diisi--";
     const tableHp = document.querySelector("#table_hp")?.value || "--Nomor HP tidak diisi--";
 
     return `##---------------------------------##
 Halo, saya ingin reservasi,
 Atas nama: ${tableName} 
 Meja untuk: ${tableSize} orang
-Meja nomor: ${tableMeja}
 No Hp: ${tableHp}
 Pada tanggal/waktu: ${date}
 
@@ -46,18 +45,24 @@ ${order}`;
 // Fungsi untuk validasi input
 function validateForm() {
     const tableName = document.querySelector("#table_name").value.trim();
+    const tableHp = document.querySelector("#table_hp").value.trim(); // Tambahkan ini
     const date = document.querySelector("#order_date").value.trim();
 
     if (!tableName) {
         alert("Nama harus diisi.");
         return false;
     }
-    // if (!date) {
-    //     alert("Tanggal dan waktu harus diisi.");
-    //     return false;
-    // }
+    if (!tableHp) {
+        alert("Nomor HP harus diisi.");
+        return false;
+    }
+    if (!date) {
+        alert("Tanggal dan waktu harus diisi.");
+        return false;
+    }
     return true;
 }
+
 
 // Event listener untuk tombol WhatsApp
 sendWhatsappButton.addEventListener("click", function (event) {
@@ -76,38 +81,6 @@ sendWhatsappButton.addEventListener("click", function (event) {
 
     // Redirect ke WhatsApp
     window.location.href = whatsappURL;
-});
-
-// Event listener untuk tombol Discord
-sendDiscordButton.addEventListener("click", function (event) {
-    event.preventDefault(); // Mencegah form submit
-
-    // Validasi input
-    if (!validateForm()) {
-        return; // Jika validasi gagal, hentikan proses
-    }
-
-    const orderText = createOrderText();
-    const discordWebhookURL = "https://discord.com/api/webhooks/1305728622723862569/_-MkpHSkNPHwfGHSmvLrnk_Zzpd1nMcU1qc2sJRmazTJdAUMFBeBR0iN5JOhFuBkwo6s"; // Ganti dengan URL webhook Discord Anda
-
-    fetch(discordWebhookURL, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            content: orderText // Pesan yang akan dikirim
-        })
-    }).then(response => {
-        if (response.ok) {
-            alert("Pesan berhasil dikirim ke Discord");
-        } else {
-            alert("Gagal mengirim pesan ke Discord");
-        }
-    }).catch(error => {
-        console.error("Terjadi kesalahan saat mengirim pesan ke Discord:", error);
-        alert("Terjadi kesalahan saat mengirim pesan ke Discord");
-    });
 });
 
 
@@ -148,21 +121,3 @@ minumanDropdown.addEventListener('change', function() {
 promoDropdown.addEventListener('change', function() {
     addAndResetDropdown('Paket Promo', promoDropdown);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

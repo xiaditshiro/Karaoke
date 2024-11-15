@@ -1,5 +1,3 @@
-
-
 // Toggle class active untuk navbar
 const navbarNav = document.querySelector('.navbar-nav');
 
@@ -17,75 +15,52 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// Mengambil elemen tombol dan form
-const sendWhatsappButton = document.querySelector("#sendWhatsapp");
+
+
+
+
+// Ambil elemen tombol dan form
 const sendDiscordButton = document.querySelector("#sendDiscord");
-const form = document.querySelector("#reservation-item-form");
+const form = document.querySelector("#pesanmenu-item-form");
 
 // Fungsi untuk membuat teks pesanan
 function createOrderText() {
     const tableName = document.querySelector("#table_name")?.value || "--Nama tidak diisi--";
-    const tableSize = document.querySelector("#table_capacity")?.value || "--Tidak diisi--";
-    const date = document.querySelector("#order_date")?.value || "--Tanggal tidak diisi--";
     const order = document.querySelector("#order")?.value || "--Pesan ditempat--";
     const tableMeja = document.querySelector("#table_meja")?.value || "--Nomor meja tidak diisi--";
-    const tableHp = document.querySelector("#table_hp")?.value || "--Nomor HP tidak diisi--";
-
     return `##---------------------------------##
-Halo, saya ingin reservasi,
+Halo, saya ingin Memesan Menu,
 Atas nama: ${tableName} 
-Meja untuk: ${tableSize} orang
 Meja nomor: ${tableMeja}
-No Hp: ${tableHp}
-Pada tanggal/waktu: ${date}
 
 Order:
 ${order}`;
 }
 
-// Fungsi untuk validasi input
 function validateForm() {
     const tableName = document.querySelector("#table_name").value.trim();
-    const date = document.querySelector("#order_date").value.trim();
+    const tableMeja = document.querySelector("#table_meja").value.trim();
 
     if (!tableName) {
         alert("Nama harus diisi.");
         return false;
     }
-    // if (!date) {
-    //     alert("Tanggal dan waktu harus diisi.");
-    //     return false;
-    // }
-    return true;
-}
-
-// Event listener untuk tombol WhatsApp
-sendWhatsappButton.addEventListener("click", function (event) {
-    // Mencegah form untuk submit secara default
-    event.preventDefault();
-
-    // Validasi input
-    if (!validateForm()) {
-        return; // Jika validasi gagal, hentikan proses
+    
+    if (!tableMeja) {
+        alert("No Meja Harus Diisi.");
+        return false;
     }
 
-    // Membuat pesan untuk WhatsApp
-    const orderText = createOrderText();
-    const encodedText = encodeURIComponent(orderText);
-    const whatsappURL = `https://wa.me/6287861716325?text=${encodedText}`;
+    return true; // Hanya dikembalikan setelah semua validasi lolos
+}
 
-    // Redirect ke WhatsApp
-    window.location.href = whatsappURL;
-});
+
 
 // Event listener untuk tombol Discord
 sendDiscordButton.addEventListener("click", function (event) {
     event.preventDefault(); // Mencegah form submit
 
-    // Validasi input
-    if (!validateForm()) {
-        return; // Jika validasi gagal, hentikan proses
-    }
+    if (!validateForm()) return; // Validasi input
 
     const orderText = createOrderText();
     const discordWebhookURL = "https://discord.com/api/webhooks/1305728622723862569/_-MkpHSkNPHwfGHSmvLrnk_Zzpd1nMcU1qc2sJRmazTJdAUMFBeBR0iN5JOhFuBkwo6s"; // Ganti dengan URL webhook Discord Anda
@@ -95,9 +70,7 @@ sendDiscordButton.addEventListener("click", function (event) {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-            content: orderText // Pesan yang akan dikirim
-        })
+        body: JSON.stringify({ content: orderText })
     }).then(response => {
         if (response.ok) {
             alert("Pesan berhasil dikirim ke Discord");
@@ -109,6 +82,7 @@ sendDiscordButton.addEventListener("click", function (event) {
         alert("Terjadi kesalahan saat mengirim pesan ke Discord");
     });
 });
+
 
 
 
@@ -148,21 +122,3 @@ minumanDropdown.addEventListener('change', function() {
 promoDropdown.addEventListener('change', function() {
     addAndResetDropdown('Paket Promo', promoDropdown);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,0 +1,75 @@
+/* reservation section */
+.section-title {
+    text-align: center; /* Memusatkan teks */
+    margin: 0 auto 3rem; /* Menjadikan elemen di tengah jika ada lebar tertentu */
+    max-width: 450rem; /* Memberikan lebar maksimum jika dibutuhkan */
+}
+
+
+
+.reservation-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.opening-tiems,
+.social-media,
+.reservation-info {
+    margin-bottom: 2rem;
+}
+
+.reservation-item-info h3 {
+    margin-bottom: 1.2rem;
+}
+
+.reservation-item-info p {
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-social {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.pesanmenu-item-form div {
+    margin-bottom: 1.5rem;
+}
+
+.pwsanmenu-item-form label {
+    display: block;
+    font-weight: 300;
+    margin-bottom: 0.7rem;
+}
+
+.pesanmenu-item-form input,
+.pesanmenu-item-form textarea {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #444444;
+    padding: 0.5rem 1.3rem;
+    font-family: "Popins" sans-serif;
+    color: var(--counterBackgroundColor);
+}
+
+.pesanmenu-item-form textarea {
+    resize: none;
+}
+
+.pesanmenu-item-form button {
+    cursor: pointer;
+    padding: 0.75rem 1.5rem;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+/* location */
+.map {
+    margin-bottom: -5px;
+}
+
+.map iframe {
+    height: 450px;
+}
