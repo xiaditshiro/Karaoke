@@ -32,11 +32,11 @@ function createOrderText() {
     const tableHp = document.querySelector("#table_hp")?.value || "--Nomor HP tidak diisi--";
     const tableOrderType = document.querySelector("#order_type")?.value || "--tidak diisi--";
 
-    return `##---------------------------##
+    return `##--------------------------##
 Halo, saya ingin reservasi,
 Atas nama     : ${tableName} 
-Jenis Pesanan : ${tableOrderType}
-Meja untuk    : ${tableSize} orang
+Jenis Pesanan    : ${tableOrderType}
+Meja untuk     : ${tableSize} orang
 No Hp         : ${tableHp}
 Pada tanggal/waktu: ${date}
 

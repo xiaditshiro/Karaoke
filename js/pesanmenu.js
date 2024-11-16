@@ -77,27 +77,33 @@ function validateForm() {
     const tableMeja = document.querySelector("#table_meja").value.trim();
     const tableRuang = document.querySelector("#table_ruang").value.trim();
 
+    // Validasi Nama
     if (!tableName) {
         alert("Nama harus diisi.");
         return false;
     }
 
-    if (orderType === 'meja') {
-        // Validasi jika jenis pesanan adalah meja
-        if (!tableMeja) {
-            alert("No Meja harus diisi.");
-            return false;
-        }
-    } else if (orderType === 'ruang') {
-        // Validasi jika jenis pesanan adalah ruang
-        if (!tableRuang) {
-            alert("No Ruangan harus diisi.");
-            return false;
-        }
+    // Validasi Jenis Pesanan
+    if (!orderType) {
+        alert("Jenis Pesanan harus diisi.");
+        return false;
+    }
+
+    // Validasi jika jenis pesanan adalah meja
+    if (orderType === 'meja' && !tableMeja) {
+        alert("No Meja harus diisi.");
+        return false;
+    }
+
+    // Validasi jika jenis pesanan adalah ruang
+    if (orderType === 'ruang' && !tableRuang) {
+        alert("No Ruangan harus diisi.");
+        return false;
     }
 
     return true; // Hanya dikembalikan setelah semua validasi lolos
 }
+
 
 
 
