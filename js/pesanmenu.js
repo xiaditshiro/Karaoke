@@ -16,6 +16,30 @@ document.addEventListener('click', function(e) {
 });
 
 
+function toggleInput() {
+    const orderType = document.getElementById('order_type').value;
+    const mejaInputContainer = document.getElementById('meja_input');
+    const ruangInputContainer = document.getElementById('ruang_input');
+
+    if (orderType === 'meja') {
+        // Menampilkan input untuk meja, menyembunyikan input untuk ruangan
+        mejaInputContainer.style.display = 'block';
+        ruangInputContainer.style.display = 'none';
+    } else if (orderType === 'ruang') {
+        // Menampilkan input untuk ruang, menyembunyikan input untuk meja
+        mejaInputContainer.style.display = 'none';
+        ruangInputContainer.style.display = 'block';
+    } else {
+        // Menyembunyikan kedua input jika tidak ada pilihan
+        mejaInputContainer.style.display = 'none';
+        ruangInputContainer.style.display = 'none';
+    }
+}
+
+
+
+
+
 
 
 
@@ -23,32 +47,53 @@ document.addEventListener('click', function(e) {
 const sendDiscordButton = document.querySelector("#sendDiscord");
 const form = document.querySelector("#pesanmenu-item-form");
 
-// Fungsi untuk membuat teks pesanan
 function createOrderText() {
     const tableName = document.querySelector("#table_name")?.value || "--Nama tidak diisi--";
     const order = document.querySelector("#order")?.value || "--Pesan ditempat--";
-    const tableMeja = document.querySelector("#table_meja")?.value || "--Nomor meja tidak diisi--";
+    const orderType = document.querySelector("#order_type").value; // Ambil nilai jenis pesanan
+    let tableDetail = ""; // Menampung detail meja atau ruangan
+
+    if (orderType === "meja") {
+        // Jika memilih meja
+        tableDetail = document.querySelector("#table_meja")?.value || "--Nomor meja tidak diisi--";
+    } else if (orderType === "ruang") {
+        // Jika memilih ruang
+        tableDetail = document.querySelector("#table_ruang")?.value || "--Nomor ruangan tidak diisi--";
+    }
+
     return `##---------------------------------##
 Halo, saya ingin Memesan Menu,
-Atas nama: ${tableName} 
-Meja nomor: ${tableMeja}
+Atas Nama   : ${tableName} 
+No ${orderType === 'meja' ? 'Meja' : 'Rom'} : ${tableDetail}
 
 Order:
 ${order}`;
 }
 
+
 function validateForm() {
     const tableName = document.querySelector("#table_name").value.trim();
+    const orderType = document.getElementById('order_type').value; // Ambil nilai jenis pesanan
     const tableMeja = document.querySelector("#table_meja").value.trim();
+    const tableRuang = document.querySelector("#table_ruang").value.trim();
 
     if (!tableName) {
         alert("Nama harus diisi.");
         return false;
     }
-    
-    if (!tableMeja) {
-        alert("No Meja Harus Diisi.");
-        return false;
+
+    if (orderType === 'meja') {
+        // Validasi jika jenis pesanan adalah meja
+        if (!tableMeja) {
+            alert("No Meja harus diisi.");
+            return false;
+        }
+    } else if (orderType === 'ruang') {
+        // Validasi jika jenis pesanan adalah ruang
+        if (!tableRuang) {
+            alert("No Ruangan harus diisi.");
+            return false;
+        }
     }
 
     return true; // Hanya dikembalikan setelah semua validasi lolos

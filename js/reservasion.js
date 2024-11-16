@@ -30,12 +30,14 @@ function createOrderText() {
     const date = document.querySelector("#order_date")?.value || "--Tanggal tidak diisi--";
     const order = document.querySelector("#order")?.value || "--Pesan ditempat--";
     const tableHp = document.querySelector("#table_hp")?.value || "--Nomor HP tidak diisi--";
+    const tableOrderType = document.querySelector("#order_type")?.value || "--tidak diisi--";
 
-    return `##---------------------------------##
+    return `##---------------------------##
 Halo, saya ingin reservasi,
-Atas nama: ${tableName} 
-Meja untuk: ${tableSize} orang
-No Hp: ${tableHp}
+Atas nama     : ${tableName} 
+Jenis Pesanan : ${tableOrderType}
+Meja untuk    : ${tableSize} orang
+No Hp         : ${tableHp}
 Pada tanggal/waktu: ${date}
 
 Order:
@@ -47,19 +49,28 @@ function validateForm() {
     const tableName = document.querySelector("#table_name").value.trim();
     const tableHp = document.querySelector("#table_hp").value.trim(); // Tambahkan ini
     const date = document.querySelector("#order_date").value.trim();
+    const tableOrderType = document.querySelector("#order_type").value.trim(); // Memperbaiki ini
 
     if (!tableName) {
         alert("Nama harus diisi.");
         return false;
     }
+
+    if (!tableOrderType) { // Validasi untuk order_type
+        alert("Jenis Pesanan harus diisi.");
+        return false;
+    }
+
     if (!tableHp) {
         alert("Nomor HP harus diisi.");
         return false;
     }
+
     if (!date) {
         alert("Tanggal dan waktu harus diisi.");
         return false;
     }
+
     return true;
 }
 

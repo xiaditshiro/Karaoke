@@ -31,7 +31,7 @@
             
         </div>
         <div class="navbar-extra">
-            <a href="index.html" data-aos="fade-down" data-aos-delay="0.1" data-aos-duration="3000" >Home</a>
+            <!-- <a href="index.html" data-aos="fade-down" data-aos-delay="0.1" data-aos-duration="3000" >Home</a> -->
             <a href="reservasion.html" data-aos="fade-down" data-aos-delay="0.1" data-aos-duration="3600">Reservasion</a>
             <a href="pesan_menu.html"><i data-aos="fade-down" data-aos-delay="0.1" data-aos-duration="4200"></i>Pesan Menu</a>
             <a href="#"id="hamburger-menu" ><i data-feather="menu"></i></a>
@@ -94,14 +94,34 @@
                         placeholder="Your name">
                     </div>
                     <div>
-                        <label for="table_meja">No Meja/Rom</label>
-                        <!-- <h6>(*not diisi hanya untuk memesan menu)</h6> -->
-                        <input 
-                        type="number" 
-                        name="table_meja" 
-                        id="table_meja" 
-                        placeholder="Your table/rome">
+                        <label for="order_type">Jenis Pesanan</label>
+                        <select name="order_type" id="order_type" onchange="toggleInput()">
+                            <option value="">Pilih Jenis</option>
+                            <option value="meja">Meja</option>
+                            <option value="ruang">Ruang</option>
+                        </select>
                     </div>
+                    
+                    <!-- Input untuk Ruangan (disembunyikan secara default) -->
+                    <div id="ruang_input" style="display: none;">
+                        <label for="table_ruang">No Ruangan</label>
+                        <input 
+                            type="number" 
+                            name="table_ruang" 
+                            id="table_ruang" 
+                            placeholder="Your room number">
+                    </div>
+                    
+                    <!-- Input untuk Meja -->
+                    <div id="meja_input">
+                        <label for="table_meja">No Meja</label>
+                        <input 
+                            type="number" 
+                            name="table_meja" 
+                            id="table_meja" 
+                            placeholder="Your table">
+                    </div>
+                    
                     
                     <div>
                         <label for="order">Order Here</label>

@@ -210,6 +210,17 @@ body {
     line-height: 1.6;
 }
 
+
+
+.contact-info-sosial a[href*="wa.me"] svg path {
+    color: #fff;
+    margin: 1rem; /* Untuk elemen berbentuk SVG */
+}
+
+.contact-info-social a:hover {
+    color: var(--bg);
+}
+
 /* Menu Section */
 .menu h2, .contact h2 {
     margin-bottom: 1rem;
