@@ -41,7 +41,8 @@
 
     
     <!-- reservation -->
-    <section id="reservation" class="reservation" >
+    <section data-aos="fade-up"
+    data-aos-anchor-placement="top-bottom" id="reservation" class="reservation" >
         <div class="reservation main-container" >
             <div class="section-title" >
                 <h5>Order Menu</h5>
@@ -93,7 +94,7 @@
                         id="table_name" 
                         placeholder="Your name">
                     </div>
-                    <div>
+                    <div class="order-item">
                         <label for="order_type">Jenis Pesanan</label>
                         <select name="order_type" id="order_type" onchange="toggleInput()">
                             <option value="">Pilih Jenis</option>

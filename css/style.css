@@ -550,6 +550,55 @@ footer .credit a {
 
 
 
+
+/* Styling untuk container dropdown */
+.order-item {
+    margin-bottom: 1.5rem; /* Spasi bawah antar elemen */
+}
+
+/* Styling untuk label dropdown */
+.order-item label {
+    display: block; /* Label dalam satu baris penuh */
+    font-weight: 300; /* Ketebalan font ringan */
+    margin-bottom: 0.7rem; /* Spasi antara label dan dropdown */
+}
+
+/* Styling untuk elemen select (dropdown) */
+.order-item select {
+    background-color: black; /* Latar belakang hitam */
+    color: var(--counterBackgroundColor, #ffffff); /* Warna teks putih default */
+    border: 1px solid #444444; /* Border abu-abu */
+    padding: 0.5rem 1.3rem; /* Padding dalam dropdown */
+    font-family: "Poppins", sans-serif; /* Font Poppins */
+    width: 100%; /* Lebar penuh */
+    cursor: pointer; /* Ubah kursor saat hover */
+    appearance: none; /* Hapus gaya default browser */
+    border-radius: 5px; /* Membuat sudut membulat */
+}
+
+/* Styling untuk opsi di dalam dropdown */
+.order-item select option {
+    background-color: black; /* Latar belakang opsi */
+    color: var(--counterBackgroundColor, #ffffff); /* Warna teks putih default */
+}
+
+/* Styling untuk memperbaiki panah dropdown pada beberapa browser */
+.order-item select::-ms-expand {
+    display: none; /* Hilangkan panah bawaan */
+}
+
+/* Styling untuk dropdown dengan panah kustom */
+.order-item select {
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6" fill="none"><path fill="%23ffffff" d="M0 0l5 6 5-6H0z"/></svg>'); /* Panah putih */
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 12px;
+}
+
+
+
+
+
 /* Styling untuk container dropdown */
 .drop-menu-item {
     margin-bottom: 1.5rem;

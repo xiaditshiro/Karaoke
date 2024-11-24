@@ -76,6 +76,7 @@ function validateForm() {
     const orderType = document.getElementById('order_type').value; // Ambil nilai jenis pesanan
     const tableMeja = document.querySelector("#table_meja").value.trim();
     const tableRuang = document.querySelector("#table_ruang").value.trim();
+    const order = document.querySelector("#order").value.trim();
 
     // Validasi Nama
     if (!tableName) {
@@ -98,6 +99,11 @@ function validateForm() {
     // Validasi jika jenis pesanan adalah ruang
     if (orderType === 'ruang' && !tableRuang) {
         alert("No Ruangan harus diisi.");
+        return false;
+    }
+
+    if (!order) {
+        alert("Ingin Pesan apa?");
         return false;
     }
 
